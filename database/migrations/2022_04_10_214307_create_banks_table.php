@@ -18,7 +18,7 @@ class CreateBanksTable extends Migration
             $table->string('name');
             $table->string('acc_name');
             $table->string('acc_number');
-            $table->string('desc');
+            $table->string('desc')->nullable();
             $table->timestamps();
         });
     }

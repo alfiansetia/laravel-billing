@@ -186,6 +186,7 @@
 
         $('#form').submit(function(event) {
             // event.preventDefault();
+            $('button[type="submit"]').prop('disabled', true);
         }).validate({
             errorElement: 'span',
             errorPlacement: function(error, element) {

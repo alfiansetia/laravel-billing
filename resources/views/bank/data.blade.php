@@ -28,9 +28,9 @@
                         <tr>
                             <th class="dt-no-sorting" style="width: 30px;">id</th>
                             <th>Name</th>
-                            <th>Email</th>
-                            <th>Telp</th>
-                            <th>Role</th>
+                            <th>Acc Name</th>
+                            <th>Acc Number</th>
+                            <th>Desc</th>
                             <th class="dt-no-sorting">Action</th>
                         </tr>
                     </thead>
@@ -52,39 +52,25 @@
             <form id="form" action="" method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group mb-2">
-                        <label for="name"><i class="far fa-user mr-1" data-toggle="tooltip" title="Full Name"></i>Name</label>
+                        <label for="name"><i class="far fa-univercity mr-1" data-toggle="tooltip" title="Bank Name"></i>Bank Name</label>
                         <input type="text" name="name" class="form-control maxlength" id="name" placeholder="Please Enter Name" minlength="3" maxlength="50" required>
                         <small id="err_name" class="form-text error invalid-feedback" style="display: hide;"></small>
                     </div>
                     <div class="form-group mb-2">
-                        <label for="email"><i class="far fa-envelope mr-1" data-toggle="tooltip" title="Email User"></i>Email</label>
-                        <input type="email" name="email" class="form-control maxlength" id="email" placeholder="Please Enter Email" minlength="3" maxlength="50" required>
-                        <small id="err_email" class="form-text error invalid-feedback" style="display: hide;"></small>
+                        <label for="acc_name"><i class="far fa-envelope mr-1" data-toggle="tooltip" title="Account Name"></i>Account Name</label>
+                        <input type="text" name="acc_name" class="form-control maxlength" id="acc_name" placeholder="Please Enter Account Name" minlength="3" maxlength="50" required>
+                        <small id="err_acc_name" class="form-text error invalid-feedback" style="display: hide;"></small>
                     </div>
                     <div class="form-group mb-2">
-                        <label for="password"><i class="fas fa-fingerprint mr-1" data-toggle="tooltip" title="Password"></i>Password</label>
-                        <input type="text" name="password" class="form-control maxlength" id="password" placeholder="Please Enter Password" required minlength="8" maxlength="200">
-                        <small id="err_password" class="form-text error invalid-feedback" style="display: hide;"></small>
+                        <label for="acc_number"><i class="fas fa-file-invoice mr-1" data-toggle="tooltip" title="Account Number"></i>Account Number</label>
+                        <input type="number" name="acc_number" class="form-control maxlength" id="acc_number" placeholder="Please Enter Account Number" required maxlength="30">
+                        <small id="err_acc_number" class="form-text error invalid-feedback" style="display: hide;"></small>
                     </div>
+
                     <div class="form-group mb-2">
-                        <label for="phone"><i class="fas fa-phone mr-1" data-toggle="tooltip" title="Telephone"></i>Phone</label>
-                        <input type="number" name="phone" class="form-control maxlength" id="phone" placeholder="08xxx" required maxlength="15">
-                        <small id="err_phone" class="form-text error invalid-feedback" style="display: hide;"></small>
-                    </div>
-                    <div class="form-group mb-2">
-                        <label for="foto"><i class="fas fa-image mr-1" data-toggle="tooltip" title="Foto User"></i>Foto</label>
-                        <div class="custom-file mb-2">
-                            <input type="file" name="foto" id="foto" class="custom-file-input" required>
-                            <label class="custom-file-label" for="foto">Choose file</label>
-                        </div>
-                        <small id="err_foto" class="form-text error invalid-feedback" style="display: hide;"></small>
-                    </div>
-                    <div class="form-group mb-2">
-                        <label for="role"><i class="fas fa-user-tag mr-1" data-toggle="tooltip" title="Role User"></i>Role</label>
-                        <select name="role" id="role" class="form-control" style="width: 100%;" required>
-                            <option value="">Select Role</option>
-                        </select>
-                        <small id="err_role" class="form-text error invalid-feedback" style="display: hide;"></small>
+                        <label for="desc"><i class="fas fa-pen-alt mr-1" data-toggle="tooltip" title="Description"></i>Description</label>
+                        <textarea name="desc" id="desc" class="form-control maxlength" maxlength="200" placeholder="Please Enter Description"></textarea>
+                        <small id="err_desc" class="form-text error invalid-feedback" style="display: hide;"></small>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -110,51 +96,26 @@
             <form id="formEdit" action="" method="POST" enctype="multipart/form-data">
                 {{ method_field('PUT') }}
                 <div class="modal-body">
-                    <div class="alert alert-gradient mb-2" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <i data-feather="x"></i>
-                        </button>
-                        <strong>Leave blank Photo & Passw!</strong> if you don't want to change.
-                    </div>
                     <div class="form-group mb-2">
-                        <label for="edit_name"><i class="far fa-user mr-1" data-toggle="tooltip" title="Full Name"></i>Name</label>
+                        <label for="edit_name"><i class="far fa-univercity mr-1" data-toggle="tooltip" title="Bank Name"></i>Bank Name</label>
                         <input type="text" name="name" class="form-control maxlength" id="edit_name" placeholder="Please Enter Name" minlength="3" maxlength="50" required>
                         <small id="err_edit_name" class="form-text error invalid-feedback" style="display: hide;"></small>
                     </div>
                     <div class="form-group mb-2">
-                        <label for="edit_email"><i class="far fa-envelope mr-1" data-toggle="tooltip" title="Email User"></i>Email</label>
-                        <input type="email" name="email" class="form-control maxlength" id="edit_email" placeholder="Please Enter Email" minlength="3" maxlength="50" required>
-                        <small id="err_edit_email" class="form-text error invalid-feedback" style="display: hide;"></small>
+                        <label for="edit_acc_name"><i class="far fa-envelope mr-1" data-toggle="tooltip" title="Account Name"></i>Account Name</label>
+                        <input type="text" name="acc_name" class="form-control maxlength" id="edit_acc_name" placeholder="Please Enter Account Name" minlength="3" maxlength="50" required>
+                        <small id="err_edit_acc_name" class="form-text error invalid-feedback" style="display: hide;"></small>
                     </div>
                     <div class="form-group mb-2">
-                        <label for="edit_password"><i class="fas fa-fingerprint mr-1" data-toggle="tooltip" title="Password"></i>Password</label>
-                        <input type="text" name="password" class="form-control maxlength" id="edit_password" placeholder="Please Enter Password" minlength="8" maxlength="200">
-                        <small id="err_edit_password" class="form-text error invalid-feedback" style="display: hide;"></small>
+                        <label for="edit_acc_number"><i class="fas fa-file-invoice mr-1" data-toggle="tooltip" title="Account Number"></i>Account Number</label>
+                        <input type="number" name="acc_number" class="form-control maxlength" id="edit_acc_number" placeholder="Please Enter Account Number" required maxlength="30">
+                        <small id="err_edit_acc_number" class="form-text error invalid-feedback" style="display: hide;"></small>
                     </div>
+
                     <div class="form-group mb-2">
-                        <label for="edit_password2"><i class="fas fa-fingerprint mr-1" data-toggle="tooltip" title="Confirm Password"></i>Confirm Password</label>
-                        <input type="text" name="password2" class="form-control maxlength" id="edit_password2" placeholder="Please Confirm Password" minlength="8" maxlength="200">
-                        <small id="err_edit_password2" class="form-text error invalid-feedback" style="display: hide;"></small>
-                    </div>
-                    <div class="form-group mb-2">
-                        <label for="edit_phone"><i class="fas fa-phone mr-1" data-toggle="tooltip" title="Telephone"></i>Phone</label>
-                        <input type="number" name="phone" class="form-control maxlength" id="edit_phone" placeholder="08xxx" required maxlength="15">
-                        <small id="err_edit_phone" class="form-text error invalid-feedback" style="display: hide;"></small>
-                    </div>
-                    <div class="form-group mb-2">
-                        <label for="edit_foto"><i class="fas fa-image mr-1" data-toggle="tooltip" title="Foto User"></i>Foto</label>
-                        <div class="custom-file mb-2">
-                            <input type="file" name="foto" id="edit_foto" class="custom-file-input">
-                            <label class="custom-file-label" for="edit_foto">Choose file</label>
-                        </div>
-                        <small id="err_edit_foto" class="form-text error invalid-feedback" style="display: hide;"></small>
-                    </div>
-                    <div class="form-group mb-2">
-                        <label for="edit_role"><i class="fas fa-user-tag mr-1" data-toggle="tooltip" title="Role User"></i>Role</label>
-                        <select name="role" id="edit_role" class="form-control" style="width: 100%;" required>
-                            <option value="">Select Role</option>
-                        </select>
-                        <small id="err_edit_role" class="form-text error invalid-feedback" style="display: hide;"></small>
+                        <label for="edit_desc"><i class="fas fa-pen-alt mr-1" data-toggle="tooltip" title="Description"></i>Description</label>
+                        <textarea name="desc" id="edit_desc" class="form-control maxlength" maxlength="200" placeholder="Please Enter Description"></textarea>
+                        <small id="err_edit_desc" class="form-text error invalid-feedback" style="display: hide;"></small>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -192,60 +153,6 @@
     $(document).ready(function() {
         bsCustomFileInput.init();
 
-        $("#role").select2({
-            dropdownParent: $("#modalAdd"),
-            theme: 'bootstrap4',
-            cache: true,
-            ajax: {
-                delay: 1000,
-                url: "{{ route('role.index') }}",
-                dataType: 'json',
-                data: function(params) {
-                    return {
-                        name: params.term, // search term
-                        page: params.page
-                    };
-                },
-                processResults: function(data) {
-                    return {
-                        results: $.map(data.data, function(item) {
-                            return {
-                                text: item.name,
-                                id: item.id
-                            }
-                        })
-                    };
-                },
-            }
-        })
-
-        $("#edit_role").select2({
-            dropdownParent: $("#modalEdit"),
-            theme: 'bootstrap4',
-            cache: true,
-            ajax: {
-                delay: 1000,
-                url: "{{ route('role.index') }}",
-                dataType: 'json',
-                data: function(params) {
-                    return {
-                        name: params.term,
-                        page: params.page
-                    };
-                },
-                processResults: function(data) {
-                    return {
-                        results: $.map(data.data, function(item) {
-                            return {
-                                text: item.name,
-                                id: item.id
-                            }
-                        })
-                    };
-                },
-            }
-        });
-
         $('.maxlength').maxlength({
             placement: "top",
             alwaysShow: true
@@ -255,7 +162,7 @@
             processing: true,
             serverSide: true,
             rowId: 'id',
-            ajax: "{{ route('user.index') }}",
+            ajax: "{{ route('bank.index') }}",
             dom: "<'dt--top-section'<'row'<'col-12 col-sm-6 d-flex justify-content-sm-start justify-content-center'l><'col-12 col-sm-6 d-flex justify-content-sm-end justify-content-center mt-sm-0 mt-3'f>>>" +
                 "<'table-responsive'tr>" +
                 "<'dt--bottom-section d-sm-flex justify-content-sm-between text-center'<'dt--pages-count  mb-sm-0 mb-3'i><'dt--pagination'p>>",
@@ -289,33 +196,15 @@
             }, {
                 title: 'Name',
                 data: 'name',
-                render: function(data, type, row, meta) {
-                    let text = `<div class="d-flex">
-                                <div class="usr-img-frame mr-2 rounded-circle">
-                                    <img alt="avatar" class="img-fluid rounded-circle" src="{{ asset('assets/img/profile') }}/${row.foto == '' ? 'default.png' : row.foto}">
-                                </div>                                                        
-                                <p class="align-self-center mb-0 admin-name"> ${data} </p>
-                            </div>`
-                    return text
-                }
             }, {
-                title: 'Email',
-                data: 'email'
+                title: 'Acc Name',
+                data: 'acc_name'
             }, {
-                title: 'Phone',
-                data: 'phone'
+                title: 'Acc Number',
+                data: 'acc_number'
             }, {
-                title: 'Role',
-                data: 'roles[0].name',
-                render: function(data, type, row, meta) {
-                    let text;
-                    if (data == 'admin') {
-                        text = `<span class="badge badge-success">${data}</span>`
-                    } else {
-                        text = `<span class="badge badge-danger">${data}</span>`
-                    }
-                    return text
-                }
+                title: 'Desc',
+                data: 'desc',
             }, {
                 title: 'Action',
                 data: 'id',
@@ -424,7 +313,7 @@
                 });
                 $.ajax({
                     type: 'POST',
-                    url: "{{ route('user.store') }}",
+                    url: "{{ route('bank.store') }}",
                     mimeType: 'application/json',
                     dataType: 'json',
                     data: formData,
@@ -495,7 +384,7 @@
                     }
                 });
                 let formData = new FormData($(form)[0]);
-                let url = "{{ route('user.update', ':id') }}";
+                let url = "{{ route('bank.update', ':id') }}";
                 url = url.replace(':id', id);
                 $.ajax({
                     type: 'POST',
@@ -557,7 +446,7 @@
                 $(this).removeClass('is-invalid');
             });
             id = $(this).data('id');
-            let url = "{{ route('user.edit', ':id') }}";
+            let url = "{{ route('bank.edit', ':id') }}";
             url = url.replace(':id', id);
             $.ajax({
                 url: url,
@@ -565,12 +454,9 @@
                 success: function(result) {
                     $('#edit_reset').val(result.data.id);
                     $('#edit_name').val(result.data.name);
-                    $('#edit_email').val(result.data.email);
-                    $('#edit_phone').val(result.data.phone);
-                    $('#edit_password').val('');
-                    $('#edit_password2').val('');
-                    let option1 = new Option(result.data.roles[0].name, result.data.roles[0].id, true, true);
-                    $('#edit_role').append(option1).trigger('change');
+                    $('#edit_acc_name').val(result.data.acc_name);
+                    $('#edit_acc_number').val(result.data.acc_number);
+                    $('#edit_desc').val(result.data.desc);
                 },
                 error: function(xhr, status, error) {
                     er = xhr.responseJSON.errors
@@ -586,7 +472,7 @@
 
         $('#edit_reset').click(function() {
             id = $(this).val();
-            let url = "{{ route('user.edit', ':id') }}";
+            let url = "{{ route('bank.edit', ':id') }}";
             url = url.replace(':id', id);
             $.ajax({
                 url: url,
@@ -594,12 +480,9 @@
                 success: function(result) {
                     $('#edit_reset').val(result.data.id);
                     $('#edit_name').val(result.data.name);
-                    $('#edit_email').val(result.data.email);
-                    $('#edit_phone').val(result.data.phone);
-                    $('#edit_password').val('');
-                    $('#edit_password2').val('');
-                    let option1 = new Option(result.data.roles[0].name, result.data.roles[0].id, true, true);
-                    $('#edit_role').append(option1).trigger('change');
+                    $('#edit_acc_name').val(result.data.acc_name);
+                    $('#edit_acc_number').val(result.data.acc_number);
+                    $('#edit_desc').val(result.data.desc);
                 },
                 error: function(xhr, status, error) {
                     er = xhr.responseJSON.errors
@@ -622,7 +505,7 @@
             });
             $.ajax({
                 type: 'DELETE',
-                url: "{{ route('user.destroy') }}",
+                url: "{{ route('bank.destroy') }}",
                 data: $(form).serialize(),
                 beforeSend: function() {
                     console.log('otw')

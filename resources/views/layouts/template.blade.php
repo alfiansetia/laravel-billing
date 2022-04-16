@@ -259,7 +259,7 @@
                     <li class="menu {{ $title== 'Data Bank' ? 'active' : '' }}">
                         <a href="#bankNav" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
-                                <i data-feather="settings"></i>
+                                <i data-feather="briefcase"></i>
                                 <span>Bank</span>
                             </div>
                             <div>
