@@ -9,11 +9,6 @@
 <link href="{{ asset('plugins/table/datatable/dt-global_style.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('plugins/table/datatable/custom_dt_html5.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('plugins/table/datatables-buttons/css/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
-
-<link href="{{ asset('plugins/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
-
-<link href="{{ asset('assets/css/elements/alert.css') }}" rel="stylesheet" type="text/css" />
 <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 @endpush
 
@@ -52,7 +47,7 @@
             <form id="form" action="" method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group mb-2">
-                        <label for="name"><i class="far fa-univercity mr-1" data-toggle="tooltip" title="Bank Name"></i>Bank Name</label>
+                        <label for="name"><i class="fas fa-university mr-1" data-toggle="tooltip" title="Bank Name"></i>Bank Name</label>
                         <input type="text" name="name" class="form-control maxlength" id="name" placeholder="Please Enter Name" minlength="3" maxlength="50" required>
                         <small id="err_name" class="form-text error invalid-feedback" style="display: hide;"></small>
                     </div>
@@ -97,7 +92,7 @@
                 {{ method_field('PUT') }}
                 <div class="modal-body">
                     <div class="form-group mb-2">
-                        <label for="edit_name"><i class="far fa-univercity mr-1" data-toggle="tooltip" title="Bank Name"></i>Bank Name</label>
+                        <label for="edit_name"><i class="fas fa-university mr-1" data-toggle="tooltip" title="Bank Name"></i>Bank Name</label>
                         <input type="text" name="name" class="form-control maxlength" id="edit_name" placeholder="Please Enter Name" minlength="3" maxlength="50" required>
                         <small id="err_edit_name" class="form-text error invalid-feedback" style="display: hide;"></small>
                     </div>
@@ -146,8 +141,6 @@
 
 <script src="{{ asset('plugins/jquery-validation/jquery.validate.min.js') }}"></script>
 <script src="{{ asset('plugins/jquery-validation/additional-methods.min.js') }}"></script>
-
-<script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"></script>
 <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 <script>
     $(document).ready(function() {

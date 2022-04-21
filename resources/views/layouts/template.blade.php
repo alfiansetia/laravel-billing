@@ -256,6 +256,25 @@
                             <span>SERVICE</span>
                         </div>
                     </li>
+                    <li class="menu {{ $title== 'Data Product' || $title== 'Category Product' ? 'active' : '' }}">
+                        <a href="#productNav" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <i data-feather="briefcase"></i>
+                                <span>Product</span>
+                            </div>
+                            <div>
+                                <i data-feather="chevron-right"></i>
+                            </div>
+                        </a>
+                        <ul class="collapse submenu list-unstyled {{ $title== 'Data Product' || $title== 'Category Product' ? 'show' : '' }}" id="productNav" data-parent="#accordionExample">
+                            <li class="{{ $title == 'Data Product' ? 'active' : '' }}">
+                                <a href="{{ route('product.index') }}"> Product </a>
+                            </li>
+                            <li class="{{ $title == 'Category Product' ? 'active' : '' }}">
+                                <a href="{{ route('productCat.index') }}"> Category </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="menu {{ $title== 'Data Bank' ? 'active' : '' }}">
                         <a href="#bankNav" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                             <div class="">

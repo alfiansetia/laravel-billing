@@ -3,6 +3,8 @@
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\CompController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductCatController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserController;
@@ -41,6 +43,12 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::delete('/bank', [BankController::class, 'destroy'])->name('bank.destroy');
     Route::resource('bank', BankController::class)->except('create', 'show', 'destroy');
+
+    Route::delete('/product', [ProductController::class, 'destroy'])->name('product.destroy');
+    Route::resource('product', ProductController::class)->except('create', 'show', 'destroy');
+
+    Route::delete('/productCat', [ProductCatController::class, 'destroy'])->name('productCat.destroy');
+    Route::resource('productCat', ProductCatController::class)->except('create', 'show', 'destroy');
 
     // Route::get('/roles', [RoleController::class, 'role']);
     Route::get('/role', [RoleController::class, 'index'])->name('role.index');
